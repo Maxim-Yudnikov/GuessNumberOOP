@@ -9,12 +9,14 @@ interface DiffResult {
     }
 
     interface Failed: DiffResult
-    object ToSmall: Failed {
-        override fun getMessage() = "To small."
+    abstract class Abstract: Failed {
         override fun mapToAttemptState() = AttemptState.NotGuessed
     }
+    object ToSmall: Abstract() {
+        override fun getMessage() = "To small."
+    }
 
-    object ToBig: Failed {
+    object ToBig: Abstract() {
         override fun getMessage() = "To big."
         override fun mapToAttemptState() = AttemptState.NotGuessed
     }

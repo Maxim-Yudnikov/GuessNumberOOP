@@ -66,13 +66,6 @@ class BaseFarewellTest {
         }
     }
 
-    private class FakePrinter : Printer {
-        val printedList = mutableListOf<String>()
-        override fun print(text: String) {
-            printedList.add(text)
-        }
-    }
-
     private class FakeSecret : Secret {
         override fun getNumber(): Int {
             return 0
