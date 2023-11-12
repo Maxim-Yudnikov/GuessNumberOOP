@@ -10,7 +10,7 @@ class BaseFarewell(private val attempts: Attempts, private val secret: Secret, p
         printer.print("Guess a number in 0.100 range: ")
 
         while (true) {
-            val result = attempts.interation()
+            val result = attempts.iteration()
             if (result == AttemptState.Limited) {
                 printer.print("You lost. It was: ${secret.getNumber()}")
                 break
