@@ -15,6 +15,6 @@ class BaseAttempts(private val verboseDiff: VerboseDiff, private val maxAttempts
     override fun iteration(): AttemptState {
         val result = verboseDiff.getResultAndWrite()
 
-        return if (++currentAttempt > maxAttempts) AttemptState.Limited else result.mapToAttemptState()
+        return if (currentAttempt++ >= maxAttempts) AttemptState.Limited else result.mapToAttemptState()
     }
 }

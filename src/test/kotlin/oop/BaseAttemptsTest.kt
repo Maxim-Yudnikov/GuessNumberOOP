@@ -24,7 +24,6 @@ class BaseAttemptsTest {
         var expected: AttemptState = AttemptState.NotGuessed
         assertEquals(expected, actual)
         actual = attempts.iteration()
-        expected = AttemptState.NotGuessed
         assertEquals(expected, actual)
         actual = attempts.iteration()
         expected = AttemptState.Limited
