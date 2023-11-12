@@ -1,3 +1,5 @@
+package procedural
+
 fun main() {
     val number: Int = (0..100).random()
     var times = 0
